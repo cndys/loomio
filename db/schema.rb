@@ -259,14 +259,13 @@ ActiveRecord::Schema.define(version: 20150501015434) do
 
   create_table "group_measurements", force: :cascade do |t|
     t.integer "group_id"
-    t.integer "measured_on"
+    t.date    "measured_on"
     t.integer "members_count"
     t.integer "invitations_count"
     t.integer "discussions_count"
     t.integer "proposals_count"
     t.integer "comments_count"
     t.integer "likes_count"
-    t.integer "events_count"
   end
 
   add_index "group_measurements", ["group_id"], name: "index_group_measurements_on_group_id", using: :btree

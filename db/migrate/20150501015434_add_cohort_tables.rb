@@ -10,14 +10,13 @@ class AddCohortTables < ActiveRecord::Migration
 
     create_table :group_measurements do |t|
       t.integer :group_id
-      t.integer :measured_on
+      t.date    :measured_on
       t.integer :members_count
       t.integer :invitations_count
       t.integer :discussions_count
       t.integer :proposals_count
       t.integer :comments_count
       t.integer :likes_count
-      t.integer :events_count
     end
 
     add_index :group_measurements, :group_id
