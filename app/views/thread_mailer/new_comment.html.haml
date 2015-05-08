@@ -1,2 +1,6 @@
 = render_rich_text(@comment.body, @comment.uses_markdown)
+- if @comment.attachments.any?
+  - @comment.attachments.each do |attachment|
+    %li{style: "list-style-type: none; margin-bottom: 10px;"}
+      = link_to attachment.filename, attachment.location
 = render "footer", link: comment_url_helper(@comment)
